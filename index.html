@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的爱好</title>
+    <style>
+        /* 基础样式 */
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #e6f2f0, #f0f9f7);
+            color: #334e4b;
+            line-height: 1.6;
+        }
+        
+        /* 头部样式 */
+        header {
+            background-color: #73bee1;
+            color: rgb(243, 237, 239);
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 内容区域样式 */
+        .content {
+            background-color: rgb(196, 250, 228);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #388e3c;
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #a5d6a7;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        /* 图片样式 */
+        .anime-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin: 1rem 0;
+            float: right;
+            margin-left: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 列表样式 */
+        .anime-list {
+            list-style-type: none;
+            margin: 1rem 0;
+        }
+        
+        .anime-list li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .anime-list li:before {
+            content: "✦";
+            color: #4a90e2;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        /* 导航链接样式 */
+        .nav-links {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dcedc8;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background-color: #81c784;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(129, 199, 132, 0.3);
+        }
+        
+        .nav-links a:hover {
+            background-color: #43a047;
+            transform: translateY(-2px);
+        }
+        
+        .current-page {
+            background-color: #4a90e2 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>我的爱好世界</h1>
+            <p>探索让生活发光的小确幸</p >
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>其一：在闲暇之余看动漫</h2>
+            <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\111\11.jpg" alt="阅读场景" class="anime-image">
+            <p>如图展示的是《狐妖小红娘》的官方展示图，每当我压力过大时，一集恰到好处的动漫可以缓解我的烦恼，当然除此之外还会有其他的爱好</p >
+            
+            <h2>我喜欢的其他娱乐方式</h2>
+            <ul class="anime-list">
+                <li><strong>玩游戏</strong>：对于我来说喜欢游戏完全是因为我喜欢里面的人物，后面会详细介绍</li>
+                <li><strong>厨艺</strong>：烹饪是一剂良药，可以让人身心愉悦</li>
+                <li><strong>出游</strong>：世界有很多美好的事，也有很多有意思的事等着我们发现，期待有一天能亲自看到书本上的奇景</li>
+            </ul>
+            
+            <h2>喜欢看动漫的原因</h2>
+            <p>其实本人是有点自卑与内向的，在动漫的世界里，我也在慢慢学着如何接触世界</p >
+            <p>当然，我喜欢的不多就那么几部，老师如果感兴趣的话也可以试着去看看，偶尔试试新的娱乐方式也是不错的选择</p >
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="222\游戏.html">游戏</a>
+        <a href="333\厨艺.html">美食</a>
+        <a href="444\出游.html">出游</a>
+    </div>
+</body>
+</html>
