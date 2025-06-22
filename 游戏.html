@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我爱的游戏</title>
+    <style>
+        /* 基础样式继承阅读页面，此处仅写新增/修改样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #e6f2f0, #f0f9f7);
+            color: #334e4b;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #6be3e5;
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #a5c6d6;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        
+        .game-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin: 1rem 0;
+            float: left;
+            margin-right: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .playlist {
+            background-color: #f5f9f8;
+            border-left: 4px solid #4a90e2;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        
+        .playlist h3 {
+            color: #4a90e2;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .playlist h3:before {
+            content: "♫";
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .s-list {
+            list-style-type: none;
+        }
+        
+        .s-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #d0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .s-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .s-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .s-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 0.8rem;
+            object-fit: cover;
+        }
+        
+        .s-time {
+            color: #667c79;
+            font-size: 0.9rem;
+        }
+        
+        
+        .instrument-icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .icon-item {
+            text-align: center;
+        }
+        
+        .icon-item img {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-item img:hover {
+            transform: scale(1.1);
+        }
+        
+        .icon-item p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #556b69;
+        }
+        
+        /* 导航链接样式与阅读页面一致 */
+        .nav-links {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddc8ed;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background-color: #819fc7;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(129, 199, 132, 0.3);
+        }
+        
+        .nav-links a:hover {
+            background-color: #437ca0;
+            transform: translateY(-2px);
+        }
+        
+        .current-page {
+            background-color: #4a90e2 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>我的爱好世界</h1>
+            <p>探索让生活发光的小确幸</p >
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>我爱的游戏角色——嫦娥</h2>
+            <img src="微信图片_20250622164926.jpg" alt="此处为图片" class="game-image">
+            <p>她就像我的好朋友一样，她温柔坚强给了我许多许多力量，当我沮丧的时候我就会打开界面看看她，心情就会好一些</p >
+            
+            <h2>我喜欢她的原因</h2>
+            <p>我喜欢她的原因有很多，请听我一一介绍：</p >
+            <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                <li><strong>遇见她的时机</strong>：高考完有点沮丧，当时偶然遇见了她，她的台词很有力量</li>
+                <li><strong>被背景故事吸引</strong>：在文学中她是神女，但是她在游戏背景特别孤单</li>
+                <li><strong>皮肤色调和谐</strong>：我喜欢的颜色是蓝色，紫色绿色偏多一些所以她很和我审美</li>
+            </ul>
+            
+            <div class="playlist">
+                <h3>分享好看的图片</h3>
+                <ul class="s-list">
+                    <li>
+                        <div class="s-info">
+                            <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\222\微信图片_20250622164911.jpg" alt="好看图片">
+                            <div>
+                                <div style="font-weight: 500;">拒霜思</div>
+                                <div style="font-size: 0.9rem; color: #667c79;">源梦</div>
+                            </div>
+                        </div>
+                        <div class="s-time"></div>
+                    </li>
+                    <li>
+                        <div class="s-info">
+                            <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\222\微信图片_20250622164935.jpg" alt="如梦令">
+                            <div>
+                                <div style="font-weight: 500;">如梦令</div>
+                                <div style="font-size: 0.9rem; color: #667c79;">七夕</div>
+                            </div>
+                        </div>
+                        <div class="s-time"></div>
+                    </li>
+                    <li>
+                        <div class="s-info">
+                            <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\222\微信图片_20250622164945.jpg" alt="暖冬">
+                            <div>
+                                <div style="font-weight: 500;">暖冬兔眠</div>
+                                <div style="font-size: 0.9rem; color: #667c79;">兔子</div>
+                            </div>
+                        </div>
+                        <div class="s-time"></div>
+                    </li>
+                </ul>
+            </div>
+            
+            <h2>我与嫦娥的故事</h2>
+            <p>大学时曾尝试学习如何打好，虽然打得不算厉害，但也打了属于她的小小荣誉。每次拿到她，都能感受到她带来的治愈力量，那些练习时的瞬间，现在回想起来都是很有趣的回忆。</p >
+            
+            <h2>我喜欢的角色</h2>
+            <div class="instrument-icons">
+                <div class="icon-item">
+                    <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\222\拒霜思.jpg" alt="拒霜思">
+                    <p>拒霜思</p >
+                </div>
+                <div class="icon-item">
+                    <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\222\如梦令.jpg" alt="如梦令">
+                    <p>如梦令</p >
+                </div>
+                <div class="icon-item">
+                    <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\222\兔眠.jpg" alt="兔眠">
+                    <p>暖冬兔眠</p >
+                </div>
+                <div class="icon-item">
+                    <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\222\露花倒影.jpg" alt="露花倒影">
+                    <p>露花倒影</p >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="111\index.html">动漫</a>
+        <a href="333\厨艺.html">美食</a>
+        <a href="444\出游.html">出游</a>
+    </div>
+</body>
+</html>

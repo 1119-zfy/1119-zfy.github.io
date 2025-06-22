@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的烹饪爱好</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #e6f2f0, #f0f9f7);
+            color: #334e4b;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #4a90e2;
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: #388e3c;
+            margin: 1.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #a5d6a7;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        
+        .cooking-image {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin: 1rem 0;
+            float: right;
+            margin-left: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recipe-card {
+            background-color: #f9fcfb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 3px 10px rgba(165, 214, 167, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .recipe-card h3 {
+            color: #4a90e2;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .recipe-card h3:before {
+            content: "🍳";
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .recipe-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            color: #556b69;
+            font-size: 0.95rem;
+        }
+        
+        .info-item i {
+            margin-right: 0.4rem;
+            color: #388e3c;
+        }
+        
+        .ingredients {
+            margin: 1rem 0;
+        }
+        
+        .ingredients h4 {
+            color: #388e3c;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ingredients h4:before {
+            content: "🧅";
+            margin-right: 0.4rem;
+        }
+        
+        .ingredients ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+        
+        .ingredients li {
+            background-color: #e8f5e9;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .cooking-steps {
+            margin: 1rem 0;
+        }
+        
+        .cooking-steps h4 {
+            color: #4a90e2;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cooking-steps h4:before {
+            content: "👩🍳";
+            margin-right: 0.4rem;
+        }
+        
+        .cooking-steps ol {
+            padding-left: 1.5rem;
+        }
+        
+        .cooking-steps li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .cooking-tips {
+            background-color: #e3f2fd;
+            border-left: 4px solid #4a90e2;
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        
+        .cooking-tips h3 {
+            color: #4a90e2;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cooking-tips h3:before {
+            content: "💡";
+            margin-right: 0.5rem;
+        }
+        
+        .cooking-tips ul {
+            padding-left: 1.5rem;
+        }
+        
+        .cooking-tips li {
+            margin-bottom: 0.5rem;
+        }
+        
+        
+        .food-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-item p {
+            padding: 0.8rem;
+            margin: 0;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        
+        .nav-links {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dcedc8;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .nav-links a {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background-color: #81c784;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(129, 199, 132, 0.3);
+        }
+        
+        .nav-links a:hover {
+            background-color: #43a047;
+            transform: translateY(-2px);
+        }
+        
+        .current-page {
+            background-color: #4a90e2 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>我的爱好世界</h1>
+            <p>探索让生活发光的小确幸</p >
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h2>烹饪：用美食温暖时光</h2>
+            <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\333\厨房.jpg" alt="烹饪场景" class="cooking-image">
+            <p>烹饪对我来说不仅是生存技能，更是一种治愈方式。从挑选食材到完成装盘，整个过程充满了创造的乐趣。当看到家人朋友享用美食时的满足表情，会觉得所有的准备工作都值得。</p >
+            
+            <h2>我的拿手菜谱</h2>
+            <div class="recipe-card">
+                <h3>番茄炒蛋（家常版）</h3>
+                <div class="recipe-info">
+                    <div class="info-item"><i>⏰</i> 准备时间：10分钟</div>
+                    <div class="info-item"><i>🍳</i> 烹饪时间：8分钟</div>
+                    <div class="info-item"><i>👥</i> 适合人数：2-3人</div>
+                </div>
+                
+                <div class="ingredients">
+                    <h4>食材准备</h4>
+                    <ul>
+                        <li>番茄 2个</li>
+                        <li>鸡蛋 3个</li>
+                        <li>葱花 少许</li>
+                        <li>盐 适量</li>
+                        <li>糖 少许</li>
+                        <li>食用油 适量</li>
+                    </ul>
+                </div>
+                
+                <div class="cooking-steps">
+                    <h4>制作步骤</h4>
+                    <ol>
+                        <li>番茄洗净切块，鸡蛋打入碗中加少许盐打散</li>
+                        <li>锅中倒油，油热后倒入蛋液，凝固后用筷子划散盛出</li>
+                        <li>锅中再倒少许油，放入番茄块翻炒至出汁</li>
+                        <li>加入适量盐和糖调味，再倒入炒好的鸡蛋翻炒均匀</li>
+                        <li>最后撒上葱花，即可出锅</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="cooking-tips">
+                <h3>烹饪小技巧</h3>
+                <ul>
+                    <li>番茄选熟透的更容易炒出汁，也可以在番茄底部划十字用开水烫一下去皮</li>
+                    <li>炒蛋时油稍多一点，油温不要太高，否则鸡蛋容易炒老</li>
+                    <li>喜欢酸甜口的可以多放一点糖，根据个人口味调整</li>
+                    <li>出锅前滴几滴香油，会让香味更浓郁</li>
+                </ul>
+            </div>
+            
+            <h2>我的美食记录</h2>
+            <p>每次做出满意的菜品时，我都会拍照记录下来，这些照片不仅是美食的留念，更是生活的印记。</p >
+            <div class="food-gallery">
+                <div class="gallery-item">
+                    <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\333\鸡.jpg" alt="美食图片">
+                    <p>香菇炖鸡</p >
+                </div>
+                <div class="gallery-item">
+                    <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\333\sl.jpg" alt="美食图片">
+                    <p>蔬菜沙拉</p >
+                </div>
+                <div class="gallery-item">
+                    <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\333\dg.jpg" alt="美食图片">
+                    <p>草莓蛋糕</p >
+                </div>
+                <div class="gallery-item">
+                    <img src="C:\Users\HUAWEI\Desktop\6-202321130002-张方圆\333\土豆丝.jpg" alt="美食图片">
+                    <p>酸辣土豆丝</p >
+                </div>
+            </div>
+            
+            <h2>烹饪带给我的感悟</h2>
+            <p>烹饪就像生活，需要耐心和用心。有时候看似简单的食材，经过不同的搭配和处理，就能呈现出完全不同的味道。这让我学会了在平淡中发现美好，在重复中寻找新意。</p >
+        </div>
+    </div>
+
+    <div class="nav-links">
+       <a href="222\游戏.html">游戏</a>
+      <a href="444\出游.html">出游</a>
+        <a href="111\index.html">动漫</a>
+    </div>
+</body>
+</html>
